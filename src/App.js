@@ -215,7 +215,7 @@ function App() {
           <Route element={<Projects />} path="/projects" />
           <Route element={<CV />} path="/cv" />
           <Route element={<PlayMusic />} path="/playmusic" />
-          <Route element={<Water />} path="/watertracker" />
+          <Route element={<Water />} path="/water" />
           <Route element={<Notes />} path="/notes" />
           <Route element={<Game />} path="/game" />
           <Route element={<Manifest />} path="/manifest" />
