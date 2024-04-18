@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./components/Home";
-import Projects from "./components/Projects";
+import Projects from "./components/projects/Projects";
 import CV from "./components/CV";
 import PlayMusic from "./components/PlayMusic";
 import Water from "./components/Water";
