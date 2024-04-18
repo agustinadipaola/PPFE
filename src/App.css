@@ -37,3 +37,12 @@
   }
 }
 
+@font-face {
+  font-family: jhal;
+  src: url(../src/fonts/Jhal\ Muri.ttf);
+}
+
+.roboto {
+  font-family: jhal;
+}
+
