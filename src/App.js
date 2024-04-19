@@ -6,9 +6,10 @@ import PlayMusic from "./components/PlayMusic";
 import Water from "./components/Water";
 import Images from "./components/Images";
 import Notes from "./components/Notes";
-import Manifest from "./components/Manifest";
+import Manifest from "./components/manifest/Manifest";
 import Game from "./components/Game";
 import Books from "./components/Books";
+import ContactMe from "./components/ContactMe";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -209,6 +210,23 @@ function App() {
           >manifest
           </Button>
         </Link>
+        <Link to="/contacme">
+          <Button
+            variant="light"
+            style={{
+              position: "absolute",
+              bottom: "400px", // Adjust as needed
+              right: "890px", // Adjust as needed
+            padding: "10px",
+
+
+              backgroundColor: "#ffffff00",
+              color: "#ffffff00",
+              borderColor: "#ffffff00",
+            }}
+          >contactme
+          </Button>
+        </Link>
 
         <Routes>
           <Route element={<Home />} path="/" />
@@ -221,6 +239,7 @@ function App() {
           <Route element={<Manifest />} path="/manifest" />
           <Route element={<Images />} path="/images" />
           <Route element={<Books />} path="/books" />
+          <Route element={<ContactMe />} path="/contactme" />
         </Routes>
       </Router>
     </header>

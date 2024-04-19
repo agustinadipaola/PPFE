@@ -38,11 +38,12 @@
 }
 
 @font-face {
-  font-family: jhal;
-  src: url(../src/fonts/Jhal\ Muri.ttf);
+  font-family: handwritting;
+  src: url(../src/fonts/Liohandwritting.otf);
 }
 
 .roboto {
-  font-family: jhal;
+  font-family: handwritting;
 }
+
 

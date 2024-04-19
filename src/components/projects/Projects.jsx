@@ -30,7 +30,7 @@ function Projects() {
     <>
      
 {/* for font style porpuses, I use  &lt; and &gt; that represent >< */}
-<h1 style={{fontFamily: "jhal", textAlign: "center"}}>&lt; Projects &gt;</h1>
+<h1 style={{fontFamily: "handwritting", textAlign: "center", fontSize:"80px"}}>projects</h1>
       {" "}
       <div style={{ display: 'flex', flexWrap: 'wrap'}}>        <Card
           className="col-sm-6 col-md-6 col-lg-6"
@@ -112,7 +112,7 @@ function Projects() {
       
         <Card
           className="col-sm-6 col-md-6 col-lg-6"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center"}}
         >
           <Card.Text>
             The primary objective of this software coding project was to
