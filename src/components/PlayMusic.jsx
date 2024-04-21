@@ -1,10 +1,7 @@
-
-
-function PlayMusic() {
-    return ( 
-        <h1>SPOTIFY</h1>
-
-     );
+function playmusic() {
+  return ( 
+    <div></div>
+   );
 }
 
-export default PlayMusic;
+export default playmusic;

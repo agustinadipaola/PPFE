@@ -15,12 +15,11 @@ import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Button from "react-bootstrap/Button";
-
 function App() {
   return (
     <header>
       <Router>
-        <a href="https://github.com/agustinadipaola">
+        {/* <a href="https://github.com/agustinadipaola">
           <Button
             variant="light"
             style={{
@@ -226,7 +225,7 @@ function App() {
             }}
           >contactme
           </Button>
-        </Link>
+        </Link> */}
 
         <Routes>
           <Route element={<Home />} path="/" />
@@ -240,6 +239,8 @@ function App() {
           <Route element={<Images />} path="/images" />
           <Route element={<Books />} path="/books" />
           <Route element={<ContactMe />} path="/contactme" />
+          <Route element={<Home />} path="/home" />
+
         </Routes>
       </Router>
     </header>
