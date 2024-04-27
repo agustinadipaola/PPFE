@@ -7,6 +7,7 @@ function EditBook() {
     const params = useParams();
     const [name, setName] = useState("");
     const [author, setAuthor] = useState("");
+    const [type, setType] = useState("");
     const [image, setImage] = useState("");
     const navigate = useNavigate();
 
@@ -17,6 +18,7 @@ function EditBook() {
                 setName(response.data.name);
                 setAuthor(response.data.author);
                 setImage(response.data.image);
+                setType(response.data.type);
                 console.log(response);
 
             }).catch(error => console.error(error));
@@ -26,7 +28,7 @@ function EditBook() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.patch("http://localhost:8085/book/update/" + params.id, { name, author, image })
+        axios.patch("http://localhost:8085/book/update/" + params.id, { name, author, image, type })
             .then(() => {
                 navigate("/book")
             }).catch(error => console.error(error))
@@ -41,12 +43,26 @@ function EditBook() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h5>EDIT YOUR BOOK</h5>
+        <h3 style={{fontFamily: "handwritting", textAlign: "center", fontSize:"40px"}}>EDIT YOUR BOOK</h3>
 
             <input type="text" className="form-control" placeholder="Book Name" value={name} onChange={event => setName(event.target.value)}></input>
             <br />
             <input type="text" className="form-control" placeholder="Author" value={author} onChange={event => setAuthor(event.target.value)} ></input>
             <br />
+            <select
+          type="text"
+          className="form-control"
+          placeholder="Type"
+          value={type}
+          onChange={(event) => setType(event.target.value)}
+        >        
+        <option value= "Select">Select</option>
+        <option value= "Paperbook">Paper Book</option>
+        <option value= "e-Book">e-Book</option>
+        <option value= "Audiobook">Audiobook</option>
+        </select>
+        <br/>
+        
             <input
                 name="image"
                 className="form-control"

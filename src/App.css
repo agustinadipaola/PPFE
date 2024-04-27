@@ -58,4 +58,27 @@
     0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
+.left-link {
+  position: absolute;
+  left: 0;
+}
+
+.right-link {
+  position: absolute;
+  right: 0;
+}
+form {
+/* background-image: url('./images/form-background.jpg'); */
+background-color: beige;
+  padding: 1.5em;
+
+  border-radius: 2em;
+  width: 50%;
+
+  margin: auto;
+}

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 import ReactStars from "react-rating-stars-component";
-import { IoCreate } from "react-icons/io5";
+import { GiBookCover } from "react-icons/gi";
 import {Link} from 'react-router-dom';
+import { FaHeadphones } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
+import { FaTabletAlt, FaHome } from "react-icons/fa";
 
 function BookShelf() {
   // State for storing items and search value
@@ -30,23 +33,34 @@ function BookShelf() {
   return (
 
     <div className="container">
-  
-  <Link                  className="nav-link"
+      
+  <Link className="left-link nav-link" 
            to="/book"
-><IoCreate /></Link>
-
+><GiBookCover size={30}  /></Link>
+<Link    className="right-link nav-link"          
+           to="/"
+><FaHome size={30} /></Link>
+<div className="container">
+      <div className="row">
       {books.map(book => (
+        
         <Card
-          key={book.id}
-          className="col-sm-6 col-md-4 col-lg-3 m-3"
-          style={{ textAlign: "center" }}
+        
+          className="col-sm-6 col-md-4 col-lg-2 m-8"
+          style={{ textAlign: "center", display: 'flex', border: '1px solid transparent'}}
+                    key={book.id}
+
         >
           
           <img src={book.image} className="book-images" alt="bookImage" />
-          <br />
+          <br/>
+          <h6 className="icon-container">{book.type === 'Paperbook' && <FaBook />}
+    {book.type === 'e-Book' && <FaTabletAlt  />}
+    {book.type === 'Audiobook' && <FaHeadphones />}
+    </h6>   
           <h5>{book.name}</h5>
           <h6> {book.author}</h6>
-            <ReactStars
+                   <ReactStars
     count={5}
     onChange={ratingChanged}
     size={24}
@@ -56,7 +70,10 @@ function BookShelf() {
             <br />
             
         </Card>
+     
       ))}
+         </div>
+        </div>
     </div>
   );
 }
