@@ -9,7 +9,7 @@ function Home() {
         <img src={agus}
                 style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
                 />
-                 <a href="https://github.com/agustinadipaola">
+                 <a href="https://github.com/iamagustinadipaola">
           <Button
             variant="light"
             style={{
@@ -161,7 +161,7 @@ function Home() {
           </Button>
         </Link>
 
-        <Link to="/books">
+        <Link to="/book/get">
           <Button
             variant="light"
             style={{
