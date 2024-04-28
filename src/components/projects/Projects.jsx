@@ -17,26 +17,35 @@ import RoseAdd from "../../images/rose/RoseAdd.PNG";
 import RoseBuy from "../../images/rose/RoseBuy.PNG";
 import RoseBuyers from "../../images/rose/RoseBuyers.PNG";
 import RoseLet from "../../images/rose/RoseLet.PNG";
-import LogoBCS from "../../images/logos/BCS.png";
-import LogoPaistina from "../../images/logos/Paistina.png";
-import LogoCana from "../../images/logos/Cana.png";
-import LogoRose from "../../images/logos/Rose.png";
+import { FaHome} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import Carousel from "react-bootstrap/Carousel";
 
 function Projects() {
   return (
-
     <>
-     
-{/* for font style porpuses, I use  &lt; and &gt; that represent >< */}
-<h1 style={{fontFamily: "handwritting", textAlign: "center", fontSize:"80px"}}>projects</h1>
-      {" "}
-      <div style={{ display: 'flex', flexWrap: 'wrap'}}>        <Card
+         <Link className="right-link nav-link" to="/">
+        <FaHome size={30} />
+      </Link>
+      {/* for font style porpuses, I use  &lt; and &gt; that represent >< */}
+      <h1
+        style={{
+          fontFamily: "handwritting",
+          textAlign: "center",
+          fontSize: "80px",
+        }}
+      >
+        projects
+      </h1>{" "}
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {" "}
+        <Card
           className="col-sm-6 col-md-6 col-lg-6"
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center", backgroundColor: "beige"
+        }}
         >
-          <Card.Text>   
+          <Card.Text>
             The primary objective of this open-source project was to enhance the
             provided open-source code by integrating additional features and
             improvements, aligning with evolving user requirements and industry
@@ -44,8 +53,7 @@ function Projects() {
             <br />
             <br />
           </Card.Text>
-          <Carousel interval={null} >
-          
+          <Carousel interval={null}>
             <Carousel.Item>
               <Card.Img variant="bottom" src={ProInc2} sizes={10} />
             </Carousel.Item>
@@ -71,12 +79,12 @@ function Projects() {
 
           <Card.Body></Card.Body>
         </Card>
-
         <Card
           className="col-sm-6 col-md-6 col-lg-6 "
-          style={{ textAlign: "center" }}
+          style={{ textAlign: "center", backgroundColor: "beige"
+        }}
         >
-          <Card.Text >
+          <Card.Text>
             The primary objective of this software coding project was to
             modernize an existing legacy Java-based application by introducing a
             contemporary tech stack, specifically utilizing Spring for the
@@ -84,7 +92,7 @@ function Projects() {
             technologies.
           </Card.Text>
 
-          <Carousel interval={null} >
+          <Carousel interval={null}>
             <Carousel.Item>
               <Card.Img variant="bottom" src={ProInc1} sizes={10} />
             </Carousel.Item>
@@ -108,11 +116,10 @@ function Projects() {
           <Card.Body></Card.Body>
           <br />
         </Card>
-      
-      
         <Card
           className="col-sm-6 col-md-6 col-lg-6"
-          style={{ textAlign: "center"}}
+          style={{ textAlign: "center", backgroundColor: "beige"
+        }}
         >
           <Card.Text>
             The primary objective of this software coding project was to
@@ -122,7 +129,7 @@ function Projects() {
             technologies.
           </Card.Text>
 
-          <Carousel interval={null} >
+          <Carousel interval={null}>
             <Carousel.Item>
               <Card.Img variant="bottom" src={Rose} sizes={10} />
             </Carousel.Item>
@@ -138,7 +145,6 @@ function Projects() {
             <Carousel.Item>
               <Card.Img variant="bottom" src={RoseLet} sizes={10} />
             </Carousel.Item>
-            
           </Carousel>
 
           <Card.Body></Card.Body>

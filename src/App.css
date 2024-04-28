@@ -73,7 +73,6 @@
   right: 0;
 }
 form {
-/* background-image: url('./images/form-background.jpg'); */
 background-color: beige;
   padding: 1.5em;
 
@@ -82,3 +81,9 @@ background-color: beige;
 
   margin: auto;
 }
+#content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+

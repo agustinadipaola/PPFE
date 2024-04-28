@@ -4,12 +4,11 @@ import Projects from "./components/projects/Projects";
 import CV from "./components/CV";
 import PlayMusic from "./components/music/PlayMusic";
 import Water from "./components/Water";
-import Images from "./components/Images";
+import Images from "./components/pictures/Images";
 import Notes from "./components/Notes";
-import Manifest from "./components/manifest/Manifest";
-import Game from "./components/Game";
+import Game from "./components/game/Game";
 import CreateBooks from "./components/books/CreateBooks";
-import ContactMe from "./components/ContactMe";
+import ContactMe from "./components/ContactMe"
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,13 +27,13 @@ function App() {
           <Route element={<Water />} path="/water" />
           <Route element={<Notes />} path="/notes" />
           <Route element={<Game />} path="/game" />
-          <Route element={<Manifest />} path="/manifest" />
           <Route element={<Images />} path="/images" />
           <Route element={<CreateBooks />} path="/book" />
-          <Route element={<ContactMe />} path="/contactme" />
           <Route element={<Home />} path="/home" />
           <Route element={<BookShelf />} path="/book/get" />
           <Route element={<EditBook />} path="/book/update/:id" />
+          <Route element={<ContactMe />} path="/contactme" />
+
 
         </Routes>
       </Router>

@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
-import agus from "../images/agus.jpg";
+import agus from "../images/agus.png";
 import Button from 'react-bootstrap/Button';
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 function Home() {
   return (
     <div>
+ 
 
         <img src={agus}
                 style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
@@ -182,7 +183,7 @@ function Home() {
           >BOOKS
           </Button>
         </Link>
-        <Link to="/manifest">
+        <Link to="/contactme">
           <Button
             variant="light"
             style={{
@@ -196,27 +197,10 @@ function Home() {
               color: "#ffffff00",
               borderColor: "#ffffff00",
             }}
-          >manifest
-          </Button>
-        </Link>
-        <Link to="/contacme">
-          <Button
-            variant="light"
-            style={{
-              position: "absolute",
-              bottom: "400px", // Adjust as needed
-              right: "890px", // Adjust as needed
-            padding: "10px",
-
-
-              backgroundColor: "#ffffff00",
-              color: "#ffffff00",
-              borderColor: "#ffffff00",
-            }}
           >contactme
           </Button>
         </Link>
-
+       
 
 
     </div>
