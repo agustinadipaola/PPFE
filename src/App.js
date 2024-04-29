@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import BookShelf from "./components/books/BookShelf";
 import EditBook from "./components/books/EditBook";
+import HomeMobile from "./components/HomeMobile";
 function App() {
   return (
     <header>
@@ -33,6 +34,9 @@ function App() {
           <Route element={<BookShelf />} path="/book/get" />
           <Route element={<EditBook />} path="/book/update/:id" />
           <Route element={<ContactMe />} path="/contactme" />
+
+          {/* trying to use this as mobile home page */}
+          <Route element={<HomeMobile />} path="/mobile" />
 
 
         </Routes>

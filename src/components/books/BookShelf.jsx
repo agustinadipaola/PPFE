@@ -54,7 +54,7 @@ function BookShelf() {
         <div className="row">
           {books.map((book) => (
             <Card
-              className="col-sm-6 col-md-4 col-lg-2 m-8"
+              className="col-sm-4 col-md-3 col-lg-2 m-8"
               style={{
                 textAlign: "center",
                 display: "flex",

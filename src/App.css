@@ -86,4 +86,8 @@ background-color: beige;
   flex-wrap: wrap;
 }
 
+.page-background {
+  background-image: url("./images/mobile/wall.png");
+}
+
 

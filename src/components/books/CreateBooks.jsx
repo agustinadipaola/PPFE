@@ -95,7 +95,7 @@ function CreateBooks() {
           ></input>
           <br/>
    <h6 style={{          fontFamily: "handwritting",
-}} >Type: </h6>          <select
+}} >Format: </h6>          <select
             type="text"
             className="form-control"
             value={type}
