@@ -10,16 +10,17 @@ import { FaTabletAlt, FaHome } from "react-icons/fa";
 // import XLSX from 'xlsx';
 
 function BookShelf() {
-  // State for storing items and search value
+  // State for storing items 
   const [books, setBooks] = useState([]);
-  const [filterBookName, setFilterBookName] = useState("");
 
   // Fetch items from the server on component
 
   function getBooks() {
     axios
+    // find the books "get"
       .get("http://localhost:8085/book/get")
       .then((response) => {
+        // display the books
         setBooks(response.data);
         console.log("http://localhost:8085/book/get", response);
       })
@@ -27,23 +28,28 @@ function BookShelf() {
   }
   useEffect(() => getBooks(), []);
 
+  // star rating for the books. Doesnt work when refresh the page
   const ratingChanged = (newRating) => {
     console.log(newRating);
 
   };
   return (
     <div className="container">
+      {/* icon link that takes to create the book to be added to the library */}
       <Link className="left-link nav-link" to="/book">
         <GiBookCover size={30} />
       </Link>
-
+      {/* icon link that takes back to the home page */}
       <Link className="right-link nav-link" to="/">
         <FaHome size={30} />
       </Link>
       <h1
         style={{
+          // font for the title
           fontFamily: "handwritting",
+          // center the title in the middle of the screen
           textAlign: "center",
+          // size of the title
           fontSize: "80px",
         }}
       >
@@ -52,6 +58,7 @@ function BookShelf() {
 
       <div className="container">
         <div className="row">
+          {/* gets all the books */}
           {books.map((book) => (
             <Card
               className="col-sm-4 col-md-3 col-lg-2 m-8"

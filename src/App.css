@@ -85,7 +85,7 @@ background-color: beige;
   display: flex;
   flex-wrap: wrap;
 }
-
+/* feature for mobile page, expecting to appear when the screen size is a phone */
 .page-background {
   background-image: url("./images/mobile/wall.png");
 }
