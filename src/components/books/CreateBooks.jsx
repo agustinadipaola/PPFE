@@ -6,30 +6,54 @@ import React from "react";
 import { GiBookshelf } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { FaHeadphones, FaPlus, FaBook, FaTabletAlt } from "react-icons/fa";
+import confetti from "canvas-confetti";
 
+// CreateBooks component allows users to add new books to their library
+var scalar = 2;
+var book = confetti.shapeFromText({ text: '📓', scalar });
+
+var defaults = {
+  // spread: 180,
+  ticks: 120,
+  // gravity: 0,
+  // decay: 0.96,
+  // startVelocity: 10,
+  scalar: 3.5,
+  spread: 180,
+  particleCount: 30,
+  origin: { y: -0.1 },
+  startVelocity: -40,
+  shapes: [book, 'circle' ],
+};
 
 function CreateBooks() {
+    // State variables to store form inputs and book list
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState("");
   const [type, setType] = useState("");
-  const [books, setBooks] = useState([]);
-  const navigate = useNavigate();
+  const [books, setBooks] = useState([]); // State for storing the list of books
+  const navigate = useNavigate();// Enables programmatic navigation
 
+    // Function to fetch books from the server
   function getBooks() {
     axios
-      .get("http://localhost:8085/book/get")
+      .get("http://localhost:8085/book/get") // API endpoint to get books
       .then((response) => {
-        setBooks(response.data);
+        setBooks(response.data);// Update state with fetched books
         console.log("http://localhost:8085/book/get", response);
       })
       .catch((err) => console.error(err));
   }
+  // useEffect hook to load books when the component mounts
 
   useEffect(() => getBooks());
 
+    // Function to handle form submission
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission behavior
+
+    // Post request to add a new book
 
     axios
       .post("http://localhost:8085/book/create", {
@@ -39,15 +63,20 @@ function CreateBooks() {
         type,
       })
       .then((response) => {
+                // Clear form fields after submission
         setName("");
         setAuthor("");
         setImage("");
         setType("");
-        getBooks();
+        getBooks(); // Refresh the book list
       })
       .catch((error) => console.error(error));
   };
-
+  function shoot() {
+    confetti({
+      ...defaults,
+      particleCount: 30
+    });}
   return (
     <div className="container">
       <Link className="nav-link" to="/book/get">
@@ -126,6 +155,7 @@ function CreateBooks() {
               border:"1px solid grey" ,
               fontFamily: "handwritting",
             }}
+            onClick={shoot}
           >
 ADD
           </button>

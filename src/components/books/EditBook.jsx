@@ -4,17 +4,23 @@ import { useNavigate, useParams } from "react-router";
 
 function EditBook() {
 
+      // Retrieving the book ID from the URL parameters
     const params = useParams();
+        // State variables for book details
     const [name, setName] = useState("");
     const [author, setAuthor] = useState("");
     const [type, setType] = useState("");
     const [image, setImage] = useState("");
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Function to navigate to different routes
 
+    // useEffect hook to fetch the current book's details when the component mounts
 
     useEffect(() => {
+              // Making a GET request to fetch the book's details using the book ID
+
         axios.get("http://localhost:8085/book/get/" + params.id)
             .then((response) => {
+                              // Updating state variables with the response data
                 setName(response.data.name);
                 setAuthor(response.data.author);
                 setImage(response.data.image);
@@ -24,18 +30,20 @@ function EditBook() {
             }).catch(error => console.error(error));
     }, []);
 
-
+    // Function to handle form submission for updating book details
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        // Making a PATCH request to update the book's details
         axios.patch("http://localhost:8085/book/update/" + params.id, { name, author, image, type })
             .then(() => {
-                navigate("/book")
+                navigate("/book") // Navigating to the book list view after successful update
             }).catch(error => console.error(error))
     }
    // Function to delete an book
    function deleteBook() {
     axios
+            // Making a DELETE request to remove the book using the book ID
+
     .delete("http://localhost:8085/book/delete/" + params.id)
    
     // window.location.reload(); // Reload the page after deletion
@@ -77,7 +85,7 @@ function EditBook() {
             <button
               class="my-button"
               onClick={() => {
-                deleteBook();
+                deleteBook(); // Calling deleteBook function when the button is clicked
               }}
             >
               <strong>DELETE BOOK</strong>

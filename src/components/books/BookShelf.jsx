@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "axios"; // For making API calls
 import Card from "react-bootstrap/Card";
 import ReactStars from "react-rating-stars-component";
 import { GiBookCover } from "react-icons/gi";
@@ -7,26 +7,27 @@ import { Link } from "react-router-dom";
 import { FaHeadphones } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
 import { FaTabletAlt, FaHome } from "react-icons/fa";
-// import XLSX from 'xlsx';
 
+// BookShelf component shows a list of books
 function BookShelf() {
-  // State for storing items and search value
+  // 'books' holds our list of books, 'setBooks' updates it
   const [books, setBooks] = useState([]);
-  const [filterBookName, setFilterBookName] = useState("");
 
-  // Fetch items from the server on component
-
+  // gets book data from our server
   function getBooks() {
     axios
-      .get("http://localhost:8085/book/get")
+      .get("http://localhost:8085/book/get") // API endpoint to get books
       .then((response) => {
-        setBooks(response.data);
-        console.log("http://localhost:8085/book/get", response);
+        setBooks(response.data); // Update the books state with the fetched data (Put the books we got into our 'books' list)
+        console.log("http://localhost:8085/book/get", response); // Log the response for debugging
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err)); // Log errors if any
   }
-  useEffect(() => getBooks(), []);
+  // When the component first loads, we call 'getBooks' to load our books
+  useEffect(() => getBooks(), []); 
 
+    // Handler for when the rating of a book changes
+// need to work on this since the raiting doesnt get saved
   const ratingChanged = (newRating) => {
     console.log(newRating);
 
@@ -52,6 +53,7 @@ function BookShelf() {
 
       <div className="container">
         <div className="row">
+          {/* We go through each book and make a card for it */}
           {books.map((book) => (
             <Card
               className="col-sm-4 col-md-3 col-lg-2 m-8"
