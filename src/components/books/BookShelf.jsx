@@ -59,6 +59,8 @@ function BookShelf() {
                 textAlign: "center",
                 display: "flex",
                 border: "1px solid transparent",
+                justifyContent: "space-between", 
+
               }}
               key={book.id}
             >

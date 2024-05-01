@@ -66,7 +66,7 @@ function ContactMe() {
           ref={form}
           onSubmit={sendEmail}
         >
-          <h6 style={{ fontFamily: "handwritting" }}>Name</h6>
+          <h6 style={{ fontFamily: "handwritting" }}>Name: </h6>
           <input
             type="text"
             name="user_name"
@@ -74,7 +74,7 @@ function ContactMe() {
             placeholder="Your name*"
           />
           <br />
-          <h6 style={{ fontFamily: "handwritting" }}>Email</h6>
+          <h6 style={{ fontFamily: "handwritting" }}>Email: </h6>
           <input
             type="email"
             name="user_email"
@@ -82,7 +82,7 @@ function ContactMe() {
             placeholder="Your email*"
           />
           <br />
-          <h6 style={{ fontFamily: "handwritting" }}>Message</h6>
+          <h6 style={{ fontFamily: "handwritting" }}>Message: </h6>
           <textarea
             name="message"
             className="form-control"

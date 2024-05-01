@@ -123,10 +123,9 @@ function Projects() {
         >
           <Card.Text>
             The primary objective of this software coding project was to
-            modernize an existing legacy Java-based application by introducing a
-            contemporary tech stack, specifically utilizing Spring for the
-            backend, React for the frontend, and other complementary frontend
-            technologies.
+            create a front-end application for a real estate agent, making sure to add, remove and fliter properties and buers.
+            This project also included a booking section for properties to let and to sale. 
+         
           </Card.Text>
 
           <Carousel interval={null}>

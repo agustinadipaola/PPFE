@@ -137,11 +137,14 @@ ADD
         <div className="row">
           {books.map((book) => (
             <Card
-              className="col-sm-6 col-md-4 col-lg-2 m-8"
+              className="col-sm-6 col-md-4 col-lg-2 m-6"
               style={{
                 textAlign: "center",
                 display: "flex",
+                justifyContent: "space-between", 
                 backgroundColor: "beige",
+                border: "1px solid transparent",
+
               }}
               key={book.id}
             >
@@ -154,7 +157,6 @@ ADD
                 {book.type === "e-Book" && <FaTabletAlt />}
                 {book.type === "Audiobook" && <FaHeadphones />}
               </h6>
-              <br />
               <button
             className="my-button-create"
             style={{ fontFamily: "handwritting", fontSize: "20px", border: "1px solid black",               background: "transparent",
@@ -165,6 +167,7 @@ ADD
                   
                   Edit Book
               </button>
+              <br/>
             </Card>
           ))}
         </div>
