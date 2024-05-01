@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { FaHeadphones, FaPlus, FaBook, FaTabletAlt } from "react-icons/fa";
 import confetti from "canvas-confetti";
 
-// CreateBooks component allows users to add new books to their library
 var scalar = 2;
 var book = confetti.shapeFromText({ text: '📓', scalar });
 
@@ -20,11 +19,12 @@ var defaults = {
   // startVelocity: 10,
   scalar: 3.5,
   spread: 180,
-  particleCount: 30,
+  particleCount: 100,
   origin: { y: -0.1 },
   startVelocity: -40,
   shapes: [book, 'circle' ],
 };
+// CreateBooks component allows users to add new books to their library
 
 function CreateBooks() {
     // State variables to store form inputs and book list

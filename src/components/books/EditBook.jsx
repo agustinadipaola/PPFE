@@ -81,14 +81,27 @@ function EditBook() {
 
             />
             <br />
-            <button class="my-button-create" ><strong>SUBMIT EDIT</strong></button>
+            <button class="my-button-create"
+            style={{
+              background: "transparent",
+              fontSize: "20px",
+              border:"1px solid grey" ,
+              fontFamily: "handwritting",
+            }}
+           >SUBMIT EDIT</button>  &emsp; 
             <button
-              class="my-button"
+className="my-button-create"
+style={{
+  background: "transparent",
+  fontSize: "20px",
+  border:"1px solid grey" ,
+  fontFamily: "handwritting",
+}}
               onClick={() => {
                 deleteBook(); // Calling deleteBook function when the button is clicked
               }}
             >
-              <strong>DELETE BOOK</strong>
+              DELETE BOOK
             </button>
         </form>);
 }
