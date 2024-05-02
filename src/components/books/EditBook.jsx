@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function EditBook() {
 
@@ -50,6 +52,10 @@ function EditBook() {
   }
 
     return (
+      <div>
+          <Link className="left-link nav-link" to="/book">
+        &emsp; <FaArrowLeft size={30} />
+      </Link>
         <form onSubmit={handleSubmit}>
         <h3 style={{fontFamily: "handwritting", textAlign: "center", fontSize:"40px"}}>EDIT YOUR BOOK</h3>
 
@@ -103,7 +109,9 @@ style={{
             >
               DELETE BOOK
             </button>
-        </form>);
+        </form>
+        </div>
+    );
 }
 
 export default EditBook;

@@ -1,14 +1,17 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser"; // emailjs is imported to enable sending emails directly from the frontend.
 import { FaHome, FaLinkedin, FaRegSmileBeam } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 function ContactMe() {
-  const form = useRef();
+ // useRef is used to get a reference to the form element.
+   const form = useRef();
+// sendEmail is the function that will be called when the form is submitted.
+   const sendEmail = (e) => {
+    e.preventDefault(); // Prevents the default form submit action
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
+// emailjs.sendForm sends the form data to the specified email service.
     emailjs
       .sendForm("service_qffp0kb", "template_w1qlx49", form.current, {
         publicKey: "rt64_uEUCfUhHXhNl",
@@ -16,7 +19,7 @@ function ContactMe() {
       .then(
         () => {
           console.log("SUCCESS!");
-          form.current.reset(); // This line will reset the form fields
+          form.current.reset(); //Reset the form fields after successful submission
         },
         (error) => {
           console.log("FAILED...", error.text);
